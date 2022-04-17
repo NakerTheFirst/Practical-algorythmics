@@ -7,9 +7,14 @@ int main() {
     int gamesGS = 0;
     int gamesKS = 0;
     int G, T, A, D, X, Y, tmp, tmp1;
-    
+
+    // Take input
     cin >> G >> T >> A >> D;
+
+    // Check for input errors
     if (G < 1 || T < 1 || A < 1 || D < 1) return 0;
+
+    // Calculate group stage games
     for (int i = 1; T-i > 0; ++i) {
         gamesGS += T-i;
     }
@@ -35,6 +40,8 @@ int main() {
     }
 
     X = gamesGS * G + gamesKS;
+
+    // Print the output
     cout << X << "+" << Y;
 
     return 0;
