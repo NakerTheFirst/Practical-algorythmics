@@ -1,78 +1,41 @@
 #include <iostream>
 #include <cmath>
-using namespace std;
-
-// Declare the function
-string penalty(int G, int T, int A, int D);
+using std:: cin, std:: cout, std::string, std::endl;
 
 int main() {
 
-    penalty(8, 4, 2, 0);
+    int gamesGS = 0;
+    int gamesKS = 0;
+    int G, T, A, D, X, Y, tmp, tmp1;
+    
+    cin >> G >> T >> A >> D;
+    if (G < 1 || T < 1 || A < 1 || D < 1) return 0;
+    for (int i = 1; T-i > 0; ++i) {
+        gamesGS += T-i;
+    }
+
+    tmp1 = G*A+D;
+    int x;
+    for (int i = 1; ; ++i) {
+        x = pow(2, i);
+        if (tmp1 == x) {
+            Y = 0;
+            break;
+        }
+        if (tmp1 < x) {
+            Y = pow(2, i) - tmp1;
+            break;
+        }
+    }
+
+    tmp = G*A+Y+D;
+    while (tmp != 1) {
+        tmp /= 2;
+        gamesKS += tmp;
+    }
+
+    X = gamesGS * G + gamesKS;
+    cout << X << "+" << Y;
 
     return 0;
-}
-
-// G = Groups number
-// T = Teams in each group
-// A = Advancing teams from each group
-// D = Directly advancing number of teams
-
-// Define the function
-string penalty(int G, int T, int A, int D) {
-
-    // Check G input correctness
-    if(G <= 0 || G > pow(2, 16)) {
-        cout << "Input error: G must be greater than 0 and smaller than 65536" << endl;
-        return "Input error in G";
-    }
-
-    // Check T input correctness
-    if(T < A || T > pow(2, 16)) {
-        cout << "Input error: T must be greater or equal than A and smaller than 65536" << endl;
-        return "Input error in T";
-    }
-
-    // Check A input correctness
-    if(A <= 0 || A > pow(2, 16)) {
-        cout << "Input error: A must be greater than 0 and smaller than 65536" << endl;
-        return "Input error in A";
-    }
-
-    // Check D input correctness
-    if(D > pow(2, 16)) {
-        cout << "Input error: D must be smaller than 65536" << endl;
-        return "Input error in D";
-    }
-
-    // Declare games counting variables
-    int groupGames = 0;
-    int knoGames = 0;
-    int totGames = groupGames + knoGames;
-
-    // Group stage games
-    for(int i = 1; i+1 <= T; ++i) {
-        int temp = G * (T-i);
-        groupGames += temp;
-    }
-
-    cout << "The number of group phase games is: " << groupGames << endl;
-
-    // HERE I LEAVE
-    // Then add teams to the knockout stage to ceil their number to the power of 2
-    // Check if the number of teams is a power of 2
-    for(int i = 2; (G*A) % 2 != 0 && i < pow(2,16);) {
-
-    }
-
-    // Knockout stage games
-    // DYNAMISE THIS
-    knoGames = (G*A/2) + (G*A/4) + (G*A/8) + G*A/16;
-
-    // Print results
-    cout << "The number of knockout phase games is: " <<  knoGames << endl;
-    cout << "The total number of games is: " << totGames << endl;
-
-    // Calculate number of added teams
-
-    return "nothing";
 }
