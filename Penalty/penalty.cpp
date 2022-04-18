@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cmath>
-using std:: cin, std:: cout, std::string, std::endl;
+using std:: cin;
+using std:: cout;
+using std::string;
+using std::endl;
 
 int main() {
 
