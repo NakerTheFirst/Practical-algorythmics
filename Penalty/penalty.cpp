@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
-using std:: cin;
-using std:: cout;
+using std::cin;
+using std::cout;
 using std::string;
 using std::endl;
 
