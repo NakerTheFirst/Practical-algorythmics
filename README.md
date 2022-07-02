@@ -1,2 +1,7 @@
 # Practical-Algorythmics
-Tasks for my Practical algorythmics class
+My Practical Algorithmics class C++ implementations
+
+## List of tasks to do
+- [ ] Penalty
+- [ ] Sum
+- [ ] Cheater
