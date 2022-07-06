@@ -2,6 +2,6 @@
 My Practical Algorithmics class C++ implementations
 
 ## List of tasks to do
-- [ ] Penalty
+- [x] Penalty
 - [ ] Sum
 - [ ] Cheater
