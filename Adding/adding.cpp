@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <string>
 
 using std::cin;
 using std::cout;
@@ -25,6 +24,11 @@ int main() {
         nums.push_back(num2);
     }
 
+    // Remove trailing zeros from numbers in nums
+    for (int i = 0; i < 2*N; ++i) {
+        nums[i] = remove_trailing_zeros(nums[i]);
+    }
+
     // Overwrite the numbers in nums with their reversed versions
     for (int i = 0; i < 2*N; ++i) {
         nums[i] = reverse_number(nums[i]);
@@ -42,11 +46,12 @@ int main() {
 }
 
 int remove_trailing_zeros(int num) {
-    int num_without_trailing_zeros;
 
-    // If the last digit is not 0, return num
+    while (num % 10 == 0) {
+        num /= 10;
+    }
 
-    return num_without_trailing_zeros;
+    return num;
 }
 
 int reverse_number(int num) {
