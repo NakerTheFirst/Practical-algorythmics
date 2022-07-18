@@ -12,12 +12,12 @@ The input consists of N cases. The first line of the input contains only positiv
 For each case, print exactly one line containing only one integer - the reversed sum of two reversed numbers. Omit any leading zeros in the output. 
 
 ## Sample Input 
-3 
-24 1 
-4358 754 
-305 794 
+3<br> 
+24 1<br> 
+4358 754<br> 
+305 794<br> 
 
 ## Output for the Sample Input 
-34 
-1998 
-1
+34<br> 
+1998<br> 
+1<br>
