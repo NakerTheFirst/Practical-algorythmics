@@ -38,15 +38,13 @@ int main() {
     for (int i = 0; i < N; ++i) {
         sum = nums[iter] + nums[iter+1];
         cout << reverse_number(sum) << "\n";
-        iter++;
-        iter++;
+        iter = iter + 2;
     }
 
     return 0;
 }
 
 int remove_trailing_zeros(int num) {
-
     while (num % 10 == 0) {
         num /= 10;
     }
@@ -58,7 +56,7 @@ int reverse_number(int num) {
     if (num < 10 && num > 0) return num;
 
     int reversed_num = 0;
-    int n, remainder;
+    int remainder;
 
     while(num != 0) {
         remainder = num % 10;
