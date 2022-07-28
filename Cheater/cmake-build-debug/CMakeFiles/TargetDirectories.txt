@@ -1,0 +1,3 @@
+A:/Kod/C++/Practical-algorythmics/Cheater/cmake-build-debug/CMakeFiles/Cheater.dir
+A:/Kod/C++/Practical-algorythmics/Cheater/cmake-build-debug/CMakeFiles/edit_cache.dir
+A:/Kod/C++/Practical-algorythmics/Cheater/cmake-build-debug/CMakeFiles/rebuild_cache.dir
